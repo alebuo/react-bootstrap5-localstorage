@@ -1,5 +1,7 @@
 # React Bootstrap Form Page
 
+![Vista previa](src/images/a3.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Project Structure
@@ -35,8 +37,6 @@ The project structure is organized as follows:
 └── README.md 
 ```
 ## About Project
-
-![Vista previa](src/images/a1.png)
 
 This project is a React Bootstrap landing page that allows users to join a waitlist by providing their DNI and name. 
 
