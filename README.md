@@ -10,17 +10,23 @@ The project structure is organized as follows:
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
 │   ├── manifest.json
 │   └── robots.txt
 ├── src
+│   ├── components
+│   │   ├── Footer.jsx
+│   │   ├── Formu.jsx
+│   │   ├── Header.jsx
+│   │   └── Main.jsx
+│   ├── images
+│   │   ├── a1.png
+│   │   ├── a2.png
+│   │   └── a3.png
 │   ├── App.css
 │   ├── App.js
 │   ├── App.test.js
 │   ├── index.css
 │   ├── index.js
-│   ├── logo.svg
 │   ├── reportWebVitals.js
 │   ├── setupTests.js
 ├── .gitignore
@@ -28,8 +34,19 @@ The project structure is organized as follows:
 ├── package-lock.json
 └── README.md 
 ```
+## About Project
 
-##### Used technologies
+![Vista previa](src/images/a1.png)
+
+This project is a React Bootstrap landing page that allows users to join a waitlist by providing their DNI and name. 
+
+## How does it work?
+
+The waitlist is visible and provides the functionality to delete the joined data, including the DNI and name.
+
+### Thanks! 🙌
+
+#### Used technology
 
 [![CSS](https://img.shields.io/badge/CSS-★★★★-blue)](https://www.w3.org/Style/CSS/Overview.en.html)
 [![HTML](https://img.shields.io/badge/HTML-★★★★-orange)](https://html.com/)
