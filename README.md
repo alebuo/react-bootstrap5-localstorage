@@ -1,4 +1,4 @@
-# React Bootstrap Form Page
+# React-Bootstrap Form / localStorage Page
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -42,7 +42,7 @@ This project is a React Bootstrap landing page that allows users to join a waitl
 
 ## How does it work?
 
-The waitlist is visible and provides the functionality to delete the joined data, including the DNI and name.
+The waitlist keeping the data in localStorage and provides the functionality to delete the joined data, including the DNI and name.
 
 ### Thanks! 🙌
 
