@@ -23,7 +23,6 @@ const Cliente = ({cliente, borrarCliente}) => {
                             </Col>
                         </Row>
                     </Container>
-
                 </Accordion.Body>
             </Accordion.Item>
         </Fragment>

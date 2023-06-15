@@ -45,6 +45,10 @@ This project is a React Bootstrap landing page that allows users to join a waitl
 
 The waitlist keeping the data in localStorage and provides the functionality to delete the joined data, including the DNI and name.
 
+## How to view the project?
+
+[https://harmonious-cuchufli-fcbad0.netlify.app/](https://harmonious-cuchufli-fcbad0.netlify.app/)
+
 ### Thanks! 🙌
 
 #### Used technology
