@@ -13,6 +13,16 @@ const Main = () => {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
+                            src={portada3}
+                            alt="Remote medical interventions"
+                        />
+                        <Carousel.Caption>
+                            <h3 className="text-bg-success mt-0 py-3 text-capitalize">Remote medical interventions</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
                             src={portada1}
                             alt="Compatible for all devices"
                         />
@@ -30,30 +40,20 @@ const Main = () => {
                             <h3 className="text-bg-success mb-0 py-3 text-capitalize">High-Tech medical monitoring</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={portada3}
-                            alt="Remote medical interventions"
-                        />
-                        <Carousel.Caption>
-                            <h3 className="text-bg-success mt-0 py-3 text-capitalize">Remote medical interventions</h3>
-                        </Carousel.Caption>
-                    </Carousel.Item>
                 </Carousel>
                 <Container className="mt-5 mb-2 text-center">
                     <Row>
-                        <Col md={4}>
+                        <Col md={4} className="mb-3">
                             <h2 className="text-capitalize">Delivery</h2>
                             <p className="text-capitalize">deliveries throughout the continent</p>
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} className="mb-3">
                             <h2>Speed</h2>
                             <p className="text-capitalize">
                                 we optimize our shipments to improve the time of arrival of your order
                             </p>
                         </Col>
-                        <Col md={4}>
+                        <Col md={4} className="mb-3">
                             <h2>Security</h2>
                             <p className="text-capitalize">we guarantee the security of your transactions</p>
                         </Col>
