@@ -14,6 +14,7 @@ The project structure is organized as follows:
 │   └── robots.txt
 ├── src
 │   ├── components
+│   │   ├── Cliente.jsx
 │   │   ├── Footer.jsx
 │   │   ├── Formu.jsx
 │   │   ├── Header.jsx
