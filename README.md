@@ -35,15 +35,6 @@ The project structure is organized as follows:
 ├── package-lock.json
 └── README.md 
 ```
-## About Project
-
-![Vista previa](src/images/a3.png)
-
-This project is a React Bootstrap landing page that allows users to join a waitlist by providing their DNI and name. 
-
-## How does it work?
-
-The waitlist keeping the data in localStorage and provides the functionality to delete the joined data, including the DNI and name.
 
 ## How to view the project?
 
