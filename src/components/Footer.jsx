@@ -5,7 +5,6 @@ import {FaFacebookF, FaTwitter, FaInstagram} from 'react-icons/fa';
 import React from "react";
 
 const Footer = () => {
-
     return (
         <div>
             <footer
@@ -14,9 +13,9 @@ const Footer = () => {
           <span className="mb-3 mb-md-0 text-body-secondary">
               <i className="bi bi-headset-vr"></i> &copy; 2023 Medical Tech, Inc |
           </span>
-                    <span className="mb-3 mb-md-0 text-body-secondary"> Address: 5555 Ave - Pasadena, CA | </span>
-                    <span className="text-body-secondary">
-            E-Mail: <a href="mailto:info@e-learning.com">info@bazinga.bet</a>
+                    <span className="mb-3 mb-md-0 text-body-secondary"> Address: Evergreen Terrace 742 | </span>
+                    <span className="text-body-secondary">E-Mail: <a
+                        href="mailto:info@e-learning.com">info@bazinga.bet</a>
           </span>
                 </Col>
                 <Col md={3} mt={1}>
@@ -41,10 +40,9 @@ const Footer = () => {
                         </li>
                     </ul>
                 </Col>
-                <Col md={12} my={5} className="text-center">
+                <Col md={12} my={5} className="text-center mt-3">
                     <a href="/index.html" className="btn btn-primary btn-lg px-4 me-sm-3">
-                        <i className="bi bi-house-door-fill"></i> Top
-                    </a>
+                        <i className="bi bi-house-door-fill"></i> Top</a>
                 </Col>
             </footer>
         </div>

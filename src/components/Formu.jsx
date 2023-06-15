@@ -5,63 +5,47 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Col, Container, Row} from "react-bootstrap";
 
 const Formu = ({agregarCliente}) => {
-
     const [socio, editarSocio] = useState({
         nombre: "",
         dni: ""
     });
 
-    //extraer los valores nombre y dni
     const {nombre, dni} = socio;
 
-    // creo otro hook de estado para manejar el error
     const [error, setError] = useState(false);
 
-    //recogemos lo que el usuario escribe en el formulario
     const handleChange = (e) => {
         editarSocio({
             ...socio,
             [e.target.name]: e.target.value
         })
-        //console.log("Tomo los datos del formulario");
     };
 
-    //cuando se envia el formulario se ejecuta esta funcion
     const submitForm = (e) => {
         e.preventDefault();
+        //console.log("Se envio el formulario");
 
-        //descomentado para ver que funciona
-        console.log("Se envio el formulario");
-
-        //validar el formulario
         if (nombre.trim() === '' || dni.trim() === '') {
             setError(true);
             return;
         }
 
-        // mensaje de error
         setError(false);
-
-        //poner un id
-        //npm install uuid
         socio.id = uuid();
-
-        //guardar el socio
+        console.log(socio)
         agregarCliente(socio);
-
-        //limpiar el formulario
         editarSocio({
             nombre: '',
             dni: ''
         })
     };
     return (
-        <Container className="mt-5 mb-5 text-center">
+        <Container className="mt-1 mb-5 text-center">
+            <a id="joinwaitlist"></a>
             <Row>
                 <Col md={12} className="border rounded-1 shadow-lg mb-4 pb-4 pt-4">
                     <h2 className="fw-bold text-body-emphasis">JOIN WAITLIST</h2>
                     <p>Subscribe to our wait list for Medical Tech products.</p>
-                    <a id="registerform"> </a>
                     <Fragment>
                         <Form onSubmit={submitForm}>
                             <Col className="mx-5">

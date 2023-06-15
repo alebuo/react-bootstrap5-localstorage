@@ -1,52 +1,46 @@
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from "./components/Main";
 import Formu from "./components/Formu";
-import {Col, Container, Row, Modal, Button} from "react-bootstrap";
+import Cliente from "./components/Cliente";
+import {Accordion, Col, Container, Row} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {HiOutlineClipboardList} from "react-icons/hi";
+import {GoChecklist} from "react-icons/go";
+import {BiHappyBeaming} from "react-icons/bi";
+
 
 function App() {
-    // Modal
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    let clientesGuardados = JSON.parse(localStorage.getItem('clientes'));
+    if (!clientesGuardados) {
+        clientesGuardados = [];
+    }
 
-    //generar state de clientes
-    const [clientes, editarClientes] = useState([]);
+    const [clientes, editarClientes] = useState(clientesGuardados);
 
-    //funcion que tome los clientes actuales y agregue el nuevo
+    useEffect(() => {
+
+        if (clientesGuardados) {
+            localStorage.setItem('clientes', JSON.stringify(clientes));
+        } else {
+            localStorage.setItem('clientes', JSON.stringify([]));
+        }
+    }, [clientes, clientesGuardados]);
     const agregarCliente = (socio) => {
         editarClientes([
             ...clientes,
             socio
         ]);
-
-        //descomentamos
         console.log(clientes);
     };
-
-    const borrarClientes = () => {
-        editarClientes([]);
-    }
     const borrarCliente = (id) => {
         const nuevosClientes = clientes.filter(cliente => cliente.id !== id);
         editarClientes(nuevosClientes);
     }
     return (
         <div>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Client Deleted</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Great! the client has deleted!</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Ok
-                    </Button>
-                </Modal.Footer>
-            </Modal>
             <Header/>
             <Main/>
             <Fragment>
@@ -55,31 +49,30 @@ function App() {
                         <Col className="text-center">
                             <Formu
                                 agregarCliente={agregarCliente}/>
-                            <div className="b-1-divider mb-5"></div>
-                            <h2>WAITLIST</h2>
-                            <table className="table table-striped">
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">DNI</th>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Delete</th>
-                                </tr>
-                                {clientes.map((cliente) => (
-                                    <tr key={cliente.id}>
-                                        <th scope="col" className="fw-light">{cliente.nombre} </th>
-                                        <th scope="col" className="fw-light"> {cliente.dni} </th>
-                                        <th scope="col" className="fw-light"> {cliente.id} </th>
-                                        <th scope="col" className="fw-light">
-                                            <button className="btn btn-primary" onClick={() => {
-                                                borrarCliente(cliente.id);
-                                                handleShow();
-                                            }}>Del
-                                            </button>
-                                        </th>
-                                    </tr>
-                                ))}
-                            </table>
-                            <button className="btn btn-primary" onClick={borrarClientes}>Delete All Clients</button>
+                            <div className="b-1-divider mb-1"></div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col className="border rounded-1 shadow-lg mb-4 mt-4 pb-4 pt-4 text-center">
+                            <h2 className="fw-bold text-body-emphasis">WAITLIST</h2>
+                            {
+                                clientes.length > 0 ?
+                                    <h3 className="titleExistingClients"><GoChecklist/> Currently on the waiting list
+                                    </h3> :
+                                    <h3 className="titleNoClients"><HiOutlineClipboardList/> Waiting list empty. <br/>
+                                        <br/> <br/> <span className="display-5 text-success">You can be the first! <br/> <BiHappyBeaming/></span>
+                                    </h3>
+                            }
+                            <Accordion defaultActiveKey="0">
+                                {
+                                    clientes.map(cliente =>
+                                        <Cliente
+                                            cliente={cliente}
+                                            key={cliente.id}
+                                            borrarCliente={borrarCliente}
+                                        />
+                                    )
+                                }</Accordion>
                         </Col>
                     </Row>
                 </Container>

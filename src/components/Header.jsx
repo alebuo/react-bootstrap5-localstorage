@@ -19,8 +19,8 @@ const Header = () => {
                     <Navbar.Collapse id="navbars1">
                         <Nav className="me-auto mb-2 mb-md-0">
                             <Nav.Link href="/index.html" active>Home</Nav.Link>
-                            <Nav.Link href="/#registerform">
-                                <i className="bi bi-pencil-square"></i> Contact Us
+                            <Nav.Link href="/#joinwaitlist">
+                                <i className="bi bi-pencil-square"></i> Join Waitlist
                             </Nav.Link>
                             <NavDropdown title="Social Networks" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="https://twitter.com/" target="_blank" rel="noreferrer">
@@ -34,7 +34,7 @@ const Header = () => {
                                 </NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Item>
-                                <Button onClick={cambioTema} variant="dark" size="sm"
+                                <Button onClick={cambioTema} size="sm"
                                         className="btn-secondary px-1 me-sm-3">
                                     Dark/Light
                                 </Button>
